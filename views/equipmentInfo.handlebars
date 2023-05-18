@@ -1,0 +1,47 @@
+<main>
+    <section class="containerInfo">
+      <div class="rentedMessage">{{rentedMessage}}</div>
+      {{#each data}}
+        <div class="picInfo">
+        <div id="imgBox"><img class="imgInfo" id="output" width="100" src="data:image/*;base64,{{pic.data}}"></div>
+      </div>
+
+        <div class="pnameInfo">
+        <h1 id="pName">Product Name: {{pname}}</h1>
+      </div>
+
+        <div class="tagsInfo">
+        <p class="tagsInfoP">Tags: {{tag}}</p>
+      </div>
+
+        <div class="descUploadInfo">
+        <p class="descInfoHeader">Description</p>
+        <br>
+        <p class="descInfoP">{{desc}}</p>
+      </div>  
+
+      <div class="delInfo">
+        <p class="delInfoP">{{delivery}}</p>
+        <br>
+        
+      </div>
+
+        <div class="moneyInfo">
+        <p id="priceCart" class="priceInfo">Price: {{price}}</p>
+        <br>
+        <br>
+        <p id="insuranceCart" class="insuranceInfo">Insurance: {{insurance}}</p>
+        </div>
+        
+        <div class="locationInfo">
+          <h1>City: {{location}}</h1>
+        </div>
+
+        <a href="/payment/users" type="button" id="buttonAdd"><button class="buttonWah">Rent</button></a>
+        
+      {{/each}}
+    </section>
+  </main>
+  <footer>
+    
+  </footer>

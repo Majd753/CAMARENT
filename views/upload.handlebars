@@ -1,0 +1,66 @@
+<main>
+    <section>
+      <form class="form-upload" action="/users/upload" method="post" enctype="multipart/form-data">
+        <div class="pic-upload">
+        <label for="pic" style="cursor: pointer;">Upload a picture of your equipment</label>
+        <input class="inputUpload textareaUpload" type="file" id="pic" name="pic" accept="image/*" onchange="loadFile(event)" required>
+        <div id="imgBox"><img id="output" width="150"></div>
+      </div>
+
+        <div class="pname">
+        <label for="pname">Product Name</label>
+        <br>
+        <input class="inputUpload textareaUpload" type="text" id="pname" name="pname" pattern="{A-Za-z0-9}[3,15]" placeholder="Type here..." required>
+      </div>
+
+        <div class="tags">
+        <label for="tags">Tags+</label>
+        <select class="tagsUpload" name="tag" id="tags">
+        <option class="options" value="camera">Camera</option>
+        <option class="options" value="lenses">Lenses</option>
+        <option class="options" value="flash">Flash</option>
+        <option class="options" value="others">Others</option>
+        </select>
+      </div>
+
+        <div class="descUpload">
+        <label for="desc">Description</label>
+        <br>
+        <input class="inputUpload textareaUpload" type="text" id="desc" name="desc" pattern="{A-Za-z0-9}[10,200]" placeholder="Type here..." required>
+      </div>  
+
+      <div class="del">
+        <p>Delivery Option</p>
+        <br>
+        <div>
+        <input type="radio" id="pickup" name="deliveryOpt" value="pickup">
+        <label for="pickup">Pick Up</label><br>
+        <br>
+        <input type="radio" id="delivery" name="deliveryOpt" value="delivery" checked>
+        <label for="delivery">Delivery</label><br>
+        </div>
+      </div>
+
+        <div class="money">
+        <label for="pricing">Price For A Day</label>
+        <input class="inputUpload textareaUpload" type="number" id="pricing" name="price" min="0.00" max="10000.00" step="0.01" required>
+        <br>
+        <label for="insurance">Insurance Amount</label>
+        <input class="inputUpload textareaUpload" type="number" id="insurance" name="insurance" min="0.00" max="10000.00" step="0.01" required>
+        </div>
+        
+        <div class="location">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" class="inputUpload textareaUpload" pattern="^[a-zA-Z]{2,30}(\s+[a-zA-Z]{2,30})*$" required>
+        </div>
+       
+        <button type="submit" id="majd"><p style="color:beige">Upload</p></button>
+        
+
+      </form>
+    </section>
+  </main>
+  <footer>
+    
+  </footer>
+  <script type="text/javascript" src="js/script.js"></script>

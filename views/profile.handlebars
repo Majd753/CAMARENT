@@ -1,0 +1,100 @@
+<main class="profile away">
+    <section class="bioContainer">
+        <img class="proImg" src="/public/images/profile2test.jpg" alt="pic">
+        <div class="userInfo">
+        <h1 class="userName">{{userNameProfile}}</h1>
+    </div>
+    </section>
+    <h1 class="F_products_title">YOUR PRODUCTS</h1>
+      <div class="F_container">
+        <ul class="F_ks-cboxtags">
+          <li>
+            <input type="checkbox" id="checkboxOne" value="top" /><label
+              for="checkboxOne"
+              >Top</label
+            >
+          </li>
+          <li>
+            <input
+              type="checkbox"
+              id="checkboxTwo"
+              value="popular"
+              checked
+            /><label for="checkboxTwo">Popular</label>
+          </li>
+          <li>
+            <input
+              type="checkbox"
+              id="checkboxThree"
+              value="recommended"
+              checked
+            /><label for="checkboxThree">Recommended</label>
+          </li>
+        </ul>
+
+        <details class="F_dropdown">
+          <summary role="button">
+            <a class="F_button">Filter</a>
+          </summary>
+          <ul>
+            <li><a href="/users/profile/lowest">Price: from lowest</a></li>
+            <li><a href="/users/profile/highest">Price: from highest</a></li>
+            <li><a href="/users/profile/cameras">Category: Cameras</a></li>
+            <li><a href="/users/profile/flashes">Category: Flashes</a></li>
+            <li><a href="/users/profile/lenses">Category: Lenses</a></li>
+            <li><a href="/users/profile/others">Category: Others</a></li>
+          </ul>
+        </details>
+      </div>
+
+      <!-- PRODUCTS CARD -->
+      <section class="cards-grid">
+        
+
+        {{#each data}}
+        <div class="container page-wrapper">
+          <form action="/equipments/remove" method="get">
+          <div class="page-inner">
+            <div class="row">
+              <div class="el-wrapper">
+                <div class="box-up">
+                  <img
+                    class="img"
+                    src="data:image/*;base64,{{pic.data}}"
+                    alt="Lexma G88"
+                  />
+                  <div class="img-info">
+                    <div class="info-inner">
+                      <span class="p-name">{{pname}}</span>
+                      <span class="p-category">{{tag}}</span>
+                      {{!-- <span class="p-category idFirst" id="equipmentIdFirst">{{_id}}</span>    --}}
+                      <span class="p-category" id="state">{{state}}</span>        
+                      <input type="text" class="idSecond" id="equipmentId" name="equipmentId" value="{{_id}}" readonly hidden/>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-down">
+                  <div class="h-bg">
+                    <div class="h-bg-inner"></div>
+                  </div>
+                  <button type="submit">
+                  <a class="details" href="/equipments/info">
+                    <span class="price">{{price}}</span>
+                    <span class="view">
+                      <span class="txt">Remove</span>
+                    </span>
+                  </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+
+
+
+      {{/each}}
+
+      </section>
+  </main>

@@ -1,0 +1,65 @@
+{{!-- <div class="masthead">
+  <h3 class="text-muted">Site Authentication</h3>
+  <nav>
+    <ul class="nav nav-justified">
+      <li class="active"><a href="/">Home</a></li>
+      {{#if isAuthenticated}}
+        <li><a href="/users/dashboard">Dashboard</a></li>
+        <li><a href="/users/logout">Logout</a></li>
+      {{else}}
+        <li><a href="/users/register">Sign Up</a></li>
+        <li><a href="/users/login">Sign In</a></li>
+        <li><a href="/users/logout">Sign Out</a></li>
+        <li><a href="/users/profile">Profile</a></li>
+      {{/if}}
+    </ul>
+  </nav>
+</div> --}}
+
+
+ 
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/users/dashboard" class="logo navLink">
+              {{!-- <img src="/public/images/cammarent.png" alt="" /> --}}
+              <span class="nav-item">Camarent</span></a>
+          </li>
+          <li>
+            <a class="navLink" href="/users/dashboard">
+              <i class="fa-solid fa-house"></i>
+              <span class="nav-item">Home</span>
+            </a>
+          </li>
+         
+          <li>
+            <a class="navLink" href="/users/login">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              <span class="nav-item">Login</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="navLink" href="/users/profile">
+              <i class="fa-solid fa-user"></i>
+              <span class="nav-item">Profile</span>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a class="navLink" href="/users/upload">
+              <i class="fa-solid fa-upload"></i>
+              <span class="nav-item">Upload</span>
+            </a>
+          </li>
+          <li>
+            <a href="/users/logout" class="log navLink">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <span class="nav-item">logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>

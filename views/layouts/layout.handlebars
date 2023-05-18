@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CAMARENT</title>
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/public/main.css">
+          <link rel="stylesheet" href="/public/navStyle.css">
+           <link rel="stylesheet" href="/public/allNav.css">
+          <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script
+      src="https://kit.fontawesome.com/e321fb2bd8.js"
+      crossorigin="anonymous"
+    ></script>
+  {{!-- <script type = "text/javascript" >
+   function preventBack(){window.history.forward();}
+    setTimeout("preventBack()", 0);
+    window.onunload=function(){null};
+</script> --}}
+  </head>
+  <body>
+    {{#if success_messages }}
+      <div class="alert alertSuccess">{{success_messages}}</div>
+    {{/if}}
+    {{#if error_messages }}
+      <div class="alert alertError">{{error_messages}}</div>
+    {{/if}}
+    <div class="container">
+      {{> navbar}}
+      {{{body}}}
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4 class="h4">Pages</h4>
+                    <ul class="ul">
+                        <li class="li"><a class="a"
+                                href="file:///C:/Users/extra/Desktop/CS371_practiceCode/SE371_project/Phase_1/html_files/home.html#">Home</a>
+                        </li>
+                        <li class="li"><a class="a"
+                                href="file:///C:/Users/extra/Desktop/CS371_practiceCode/SE371_project/Phase_1/html_files/services.html">Services</a>
+                        </li>
+                        <li class="li"><a class="a"
+                                href="file:///C:/Users/extra/Desktop/CS371_practiceCode/SE371_project/Phase_1/html_files/team-members-page.html">Team
+                                Members</a></li>
+                        <li class="li"><a class="a"
+                                href="file:///C:/Users/extra/Desktop/CS371_practiceCode/SE371_project/Phase_1/html_files/aboutus.html">About
+                                Us</a></li>
+                        <li class="li"><a class="a"
+                                href="file:///C:/Users/extra/Desktop/CS371_practiceCode/SE371_project/Phase_1/html_files/contact-us-page.html">Contact
+                                Us</a></li>
+                        <li class="li"><a class="a"
+                                href="file:///C:/Users/extra/Desktop/CS371_practiceCode/SE371_project/Phase_1/html_files/join-us.html">Join
+                                Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="h4">Contact us via email</h4>
+                    <ul class="ul">
+                        <li class="li"><a class="a" href="#">AbdulAziz AlWahbi
+                          <br> 219110038@psu.edu.sa</a></li>
+                        <li class="li"><a class="a" href="#">Majd Zreid <br> 219110753@psu.edu.sa</a></li>
+                        <li class="li"><a class="a" href="#">Abdullah AlZeer <br> 218110320@psu.edu.sa</a></li>
+                        <li class="li"><a class="a" href="#">Saud AlOmran <br> 219110326@psu.edu.sa</a></li>
+                        <li class="li"><a class="a" href="#">Mujil AlFaraj <br> 219110441@psu.edu.sa</a></li>
+                        <li class="li"><a class="a" href="#">Mohammed AlHussaini <br> 218210859@psu.edu.sa</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="h4">Find Us</h4>
+                    <ul class="ul">
+                        <li class="li"><a href="https://goo.gl/maps/887TRBGtQcwGSYcv8"><i class="fa-solid fa-location-dot"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="h4">Follow Us</h4>
+                    <div class="social-links">
+                        <a class="a" href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a class="a" href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a class="a" href="#"><i class="fa-brands fa-snapchat"></i></a>
+                        <a class="a" href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+            crossorigin="anonymous"></script>
+            <script src="/public/script.js"></script>
+            
+  </body>
+</html>

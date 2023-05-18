@@ -1,0 +1,160 @@
+{{!-- <!-- Jumbotron -->
+<div class="jumbotron away">
+  <h1>User DashBoard</h1>
+  <form method="get" action="/search/userAPI">
+  <label for="searchBar">Search</label>
+  <input type="text" id="searchBar" name="searchBar" value="User">
+  </form>
+  <div><a href="/users/upload">Upload Equipment</a></div>
+  <table>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Insurance</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each data}}
+        <tr>
+          <td>{{pname}}</td>
+          <td>{{price}}</td>
+          <td>{{insurance}}</td>
+          <td>{{pic}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div> --}}
+
+{{!-- Down is our dasdhboard up is test --}}
+
+<header>
+      <!-- Search bar -->
+      <div class="Search">
+        <svg class="Search_icon" aria-hidden="true" viewBox="0 0 24 24">
+          <g>
+            <path
+              d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+            ></path>
+          </g>
+        </svg>
+        <form action="/search/equipment" method="get">
+        <input placeholder="Search" type="search" class="Search_input" name="searchBar"/>
+        </form>
+      </div>
+    </header>
+    <main>
+      <!-- MAIN CARD -->
+      <div class="M_card">
+    <div class="M_smallIcon">
+      <div class="M_Icon">
+        <img src="/public/images/cammarent.png" alt="Lexma G88 Camera" />
+      </div>
+      <div class="M_Name"><p> ABOUT </p></div>
+
+      <div class="M_Descripion">
+        <p>
+          Looking to capture the perfect shot but don't have the equipment you
+          need? Look no further than in camarent website, the ultimate
+          destination for photographers and videographers seeking
+          top-of-the-line gear. Whether you're a seasoned pro or a beginner,
+          we've got everything you need to bring your vision to life, from
+          high-end DSLRs and mirrorless cameras to lenses, lighting, and
+          accessories.
+        </p>
+
+      </div>
+    </div>
+  </div>
+      <!-- Filter -->
+      <h1 class="F_products_title">PRODUCTS</h1>
+      <div class="F_container">
+        <ul class="F_ks-cboxtags">
+          <li>
+            <input type="checkbox" id="checkboxOne" value="top" /><label
+              for="checkboxOne"
+              >Top</label
+            >
+          </li>
+          <li>
+            <input
+              type="checkbox"
+              id="checkboxTwo"
+              value="popular"
+              checked
+            /><label for="checkboxTwo">Popular</label>
+          </li>
+          <li>
+            <input
+              type="checkbox"
+              id="checkboxThree"
+              value="recommended"
+              checked
+            /><label for="checkboxThree">Recommended</label>
+          </li>
+        </ul>
+
+        <details class="F_dropdown">
+          <summary role="button">
+            <a class="F_button">Filter</a>
+          </summary>
+          <ul>
+            <li><a href="/users/dashboard/lowest">Price: from lowest</a></li>
+            <li><a href="/users/dashboard/highest">Price: from highest</a></li>
+            <li><a href="/users/dashboard/cameras">Category: Cameras</a></li>
+            <li><a href="/users/dashboard/flashes">Category: Flashes</a></li>
+            <li><a href="/users/dashboard/lenses">Category: Lenses</a></li>
+            <li><a href="/users/dashboard/others">Category: Others</a></li>
+          </ul>
+        </details>
+      </div>
+
+      <!-- PRODUCTS CARD -->
+      <section class="cards-grid">
+        {{#each data}}
+        <div class="container page-wrapper">
+          <form action="/equipments/info" method="get">
+          <div class="page-inner">
+            <div class="row">
+              <div class="el-wrapper">
+                <div class="box-up">
+                  <img
+                    class="img"
+                   src="data:image/*;base64,{{pic.data}}"
+                    alt="Lexma G88"
+                  />
+                  <div class="img-info">
+                    <div class="info-inner">
+                      <span class="p-name">{{pname}}</span>
+                      <span class="p-category">{{tag}}</span>
+                      {{!-- <span class="p-category idFirst" id="equipmentIdFirst">{{_id}}</span>    --}}
+                      <span class="p-category" id="state">{{state}}</span>        
+                      <input type="text" class="idSecond" id="equipmentId" name="equipmentId" value="{{_id}}" readonly hidden/>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-down">
+                  <div class="h-bg">
+                    <div class="h-bg-inner"></div>
+                  </div>
+                  <button type="submit">
+                  <a class="details" href="/equipments/info">
+                    <span class="price">{{price}}</span>
+                    <span class="view">
+                      <span class="txt">View</span>
+                    </span>
+                  </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+
+
+
+      {{/each}}
+      </section>
+    </main>

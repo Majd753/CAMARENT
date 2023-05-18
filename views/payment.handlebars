@@ -1,0 +1,152 @@
+<main>
+
+
+      <article class="checkout-card">
+        <form action="/payment/checkout" method="post">
+        <div class="checkout-container">
+            <div class="card-title">
+                <h2>Payment</h2>
+            </div>
+            <div class="checkout-content"> <!-- Card-body -->
+                <div class="payment-container">
+                    <div class="payment-type">
+                        <h4>Cards Accepted</h4>
+                        <!-- The first method -->
+                        <div class="types flex justify-space-around">
+                        <div><img src="/public/images/card_img.png" alt=""></div>                            
+                        </div> <!-- The types-container close -->
+                    </div> <!-- The payment-type close -->
+                    
+                    <div class="payment-info flex justify-space-between">
+                        
+                        <div class="column billing">
+                            <div class="title">
+                                <div class="num">1</div>
+                                <h4>Billing Info</h4>
+                            </div>
+                            <div class="field full">
+                                <label for="name">Full Name</label>
+                                <input name="fullName" id="name" type="text" placeholder="Full Name" pattern="^[a-zA-Z]{2,30}(\s+[a-zA-Z]{2,30})*$" required>
+                            </div>
+                            <div class="field full">
+                                <label for="address">Billing Address</label>
+                                <input name="billingAddress" id="address" type="text" placeholder="Billing Address" pattern="^[a-zA-Z0-9]{4,30}(\s+[a-zA-Z0-9]{4,30})*$" required>
+                            </div>
+                            <div class="flex justify-space-between">
+                                <div class="field half">
+                                    <label for="city">City</label>
+                                    <input name="city" id="city" type="text" placeholder="City" pattern="^[a-zA-Z]{3,30}(\s+[a-zA-Z]{3,30})*$" required>
+                                </div>
+                                <div class="field half">
+                                    <label for="state">State</label>
+                                    <input name="state" id="state" type="text" placeholder="State" pattern="^[a-zA-Z]{3,30}(\s+[a-zA-Z]{3,30})*$" required>
+                                </div>
+                            </div>
+                            <div class="field full">
+                                <label for="zip">Zip</label>
+                                <input name="zip" id="zip" type="text" placeholder="Zip"inputmode="numeric" pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$" required>
+                            </div>
+                        </div>
+                        <div class="column shipping">
+                            <div class="title">
+                                <div class="num">2</div>
+                                <h4>Credit Card Info</h4>
+                            </div>
+                            <div class="field full">
+                                <label for="name">Card holder Name</label>
+                                <input name="cName" id="name" type="text" placeholder="Full Name" pattern="^[a-zA-Z]{3,30}(\s+[a-zA-Z]{3,30})*$" required>
+                            </div>
+                            <div class="field full">
+                                <label for="ccn">Card Number</label>
+                                <input name="cNumber" id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
+                            </div>
+                            <div class="flex justify-space-between">
+                                <div class="field half">
+                                    <label for="city">Exp. Month</label>
+                                    <input name="expMonth" id="city" type="number" placeholder="mm" min="1" max="12" required>
+                                </div>
+                                <div class="field half">
+                                    <label for="state">Exp. Year</label>
+                                    <input name="expYear" id="state" type="text" placeholder="yy" pattern="[0-9]{4}" required>
+                                </div>
+                            </div>
+                            <div class="field full">
+                                <label for="zip">CVV</label>
+                                <input name="cvv" id="zip" type="text" placeholder="000" pattern="[0-9]{3}" required>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card-actions flex justify-space-between">
+                        <div class="flex-start">
+                            <a href="/users/dashboard"><button type="button" class="buttonPayment button-secondary">Return to Store</button></a>
+                        </div>
+                        <div class="flex-end">
+                            <!-- <button class="button button-link">Back to Shipping</button> -->
+                            <button type="submit" class="buttonPayment button-primary">Pay</button>
+                        </div>
+                        
+                    </div>
+                </div> <!-- The payment container close -->
+                <div class="summary-container">
+                    <div class="down">
+                        <div class="receipt">
+                            <h1>Order Summary</h1>
+                            <div class="payments">
+                               <table>
+                                  <tr>
+                                <label class="lDays" for="totalDays"><td><p>Enter Number of Days to be rented</p></td></label>
+                                  </tr> 
+                                  <tr>
+                                  <td> <div class="field">
+                                    <br>
+                                     <input type="text" id="totalDays" name="totalDays" placeholder="Total Days" pattern="[0-9]{1,}" required>
+                                     <br>
+                                     <button type="button" id="calcPrice" class="buttonPayment button-primary">Calculate Price</button>
+                                     </div></td>
+                                     </tr>
+                               </table>
+                               <br>
+                               <table class="total">
+                                <tr>
+                                    <td><label for="day">Total Price For a Day</label></td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <div class="field">   
+                                     <input type="text" id="day" name="day" value="{{price}}" readonly/>
+                                        </div>
+                                    </td>
+                                  </tr>
+                                    <tr>
+                                    <td><label for="insurance">Insurance</label></td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <div class="field">   
+                                     <input type="text" id="insure" name="insure" value="{{insurance}}" readonly/>
+                                        </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td><label for="totalPrice">Total</label></td>
+                                  </tr>
+                                  <tr>
+                                    <td><div class="field">
+                                     <input type="text" id="totalPrice" name="totalPrice" value="{{totalPrice}}" readonly/>
+                                     </div>
+                                     </td>
+                                  </tr>
+                                  
+                               </table>
+                               
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+      </article>
+
+  </main>
